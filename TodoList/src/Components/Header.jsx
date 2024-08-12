@@ -10,10 +10,13 @@ function Header({ todo, setTodo }) {
     }
     return (<>
         <h3> Heyy I am header</h3>
+<<<<<<< HEAD
          <div className="input-wrapper">
             <input type="text" placeholder="Add a new Task" value={input} onChange={(e)=>setInput(e.target.value)}/>
             <button onClick={addTodo}>Add</button>
         </div>
+=======
+>>>>>>> 34016479e9011068f715b27bdc59ec1a745e1ff5
     </>)
 }
 
