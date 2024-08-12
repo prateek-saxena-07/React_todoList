@@ -2,7 +2,7 @@ import ToDoItem from "./ToDoItem"
 function ToDoList()
 {
     return (<>
-        <h1>Hey I am ToDoList</h1>
+       <h4>Here comes the TodoList</h4>
         <ToDoItem></ToDoItem>
     </>)
 }
