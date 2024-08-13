@@ -9,7 +9,7 @@ const[todo,setTodo]=useState([])
   return (
     <>
       <Header todo={todo} setTodo={setTodo}></Header>  
-      <ToDoList></ToDoList>
+      <ToDoList todo={todo} setTodo={setTodo} ></ToDoList>
       
     </>
   )
