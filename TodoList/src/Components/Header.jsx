@@ -11,7 +11,7 @@ function Header({ todo, setTodo }) {
     return (<>
         <h3> Heyy I am header</h3>
          <div className="input-wrapper">
-            <input type="text" placeholder="Add a new Task" value={input} onChange={(e)=>setInput(e.target.value)}/>
+            <input type="text" placeholder="Add a new Task ( ^_^ )" value={input} onChange={(e)=>setInput(e.target.value)}/>
             <button onClick={addTodo}>Add</button>
         </div>
     </>)

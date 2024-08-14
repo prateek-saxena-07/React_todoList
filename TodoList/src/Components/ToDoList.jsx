@@ -9,3 +9,7 @@ function ToDoList({todo,setTodo})
 }
 
 export default ToDoList
+
+//toDo single task
+// todo array of task
+//key prop is not passed to its children components it is used for internal optimization when the list is modified
