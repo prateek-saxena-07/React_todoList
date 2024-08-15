@@ -1,11 +1,12 @@
 import ToDoItem from "./ToDoItem"
 function ToDoList({todo,setTodo})
 {
-    return (<>
+   
+    return (<div className="todolist">
         {
             todo.map((toDo)=>(<ToDoItem key={toDo.id} toDo={toDo} todo={todo} setTodo={setTodo} ></ToDoItem>))
         }
-    </>)
+    </div>)
 }
 
 export default ToDoList

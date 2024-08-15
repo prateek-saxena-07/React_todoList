@@ -2,7 +2,8 @@ import React,{useState} from "react";
 function ToDoItem({ toDo, todo, setTodo })
 {
     const [isEditing, setIsEditing] = useState(false)
-    const[editedText,setEditedText]=useState(toDo.text)
+    const [editedText, setEditedText] = useState(toDo.text)
+    const [error, setError] = useState('');
     const deleteTodo = () => {
 
         console.log('deleting')
@@ -10,13 +11,14 @@ function ToDoItem({ toDo, todo, setTodo })
     setTodo(todo.filter((item) => item.id !== toDo.id));
     };
     function handleCheck(e)
-    {
-        e.target.parentNode.classList.toggle('done')
+    { console.log(e.target.parentNode.parentNode.childNodes[0])
+        // e.target.parentNode.classList.toggle('done')
+        e.target.parentNode.parentNode.childNodes[0].classList.toggle('done')
     }
 
     const saveEdit = () => {
         if (editedText.trim() !== '')
-        {
+        {   setError('');
             setTodo(todo.map((item) => item.id === toDo.id ? { ...item, text: editedText } : item))
             
             setIsEditing(false);
@@ -24,22 +26,28 @@ function ToDoItem({ toDo, todo, setTodo })
         else
         {
             // alert("cannot be empty")
+            setError('Unable to add an empty task');
+            return;
             }
     }
     
 
     return (<>{isEditing ? (<div>
-        <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} placeholder="Enter Some Text  (=ʘᆽʘ=)∫"/>
-        <button onClick={saveEdit}>Save</button>
+        <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} placeholder="Enter Some Text  (=ʘᆽʘ=)∫" onFocus={()=>setError('')}/>
+        <button onClick={saveEdit} className="save-button">Save</button>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>)
         :
-        (<><span> {toDo.text}
-               {/* <p>{toDo.id}</p>  */}
-            <button onClick={()=>setIsEditing(true)}>Edit</button>
-            <button onClick={deleteTodo}>Delete</button>
-            <button onClick={(event)=>{handleCheck(event)}}>check</button>
-        </span>
-        <br /></>)}
+        (<div className="todo-item"><div className="todo-text"> {toDo.text} 
+            {/* <span>{toDo.id}</span>  */}</div>
+            <div className="button-wrapper"> <button onClick={()=>setIsEditing(true)} className="edit-button">Edit</button>
+            <button onClick={deleteTodo} className="delete-button">Delete</button>
+                <button onClick={(event) => { handleCheck(event) }} className="check-button">check</button>
+            </div>
+           
+           
+       
+        <br /></div>)}
      
         
     </>)
