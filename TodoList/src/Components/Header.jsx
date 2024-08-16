@@ -8,7 +8,7 @@ function Header({ todo, setTodo }) {
     function addTodo() {
         if (input.trim() !== '')
         {
-            console.log('todoItem', todo)
+            // console.log('todoItem', todo)
             setError('');
             setTodo([{ id: Date.now(), text: input, completed: false },...todo])
             setInput('');

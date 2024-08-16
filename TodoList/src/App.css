@@ -111,6 +111,17 @@
   background-color:rgb(245, 197, 75);
   color: aliceblue;
 }
+.edit-button:disabled
+{
+  background-color: rgb(188, 184, 184);
+  cursor: not-allowed;
+  color: aliceblue;
+  transition: none;
+}
+.edit-button:disabled:hover{
+  background-color: rgb(188, 184, 184);
+  border: none;
+}
 
 .check-button
 {
@@ -134,13 +145,13 @@
   /* display: flex;
   justify-content:space-around; */
   /* padding: 10px; */
-  margin-right: 87px;
+  margin-right: 70px;
   margin-left:10px
 }
 
 .small-text{
   padding-right: 8px;
-  font-size:0.1%;
+  font-size:1%;
   text-align: center;
 
 }
