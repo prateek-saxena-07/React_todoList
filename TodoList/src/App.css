@@ -128,3 +128,19 @@
 .check-button:hover{
   background-color: rgb(0, 8, 255);
 }
+
+.todo-text
+{
+  /* display: flex;
+  justify-content:space-around; */
+  /* padding: 10px; */
+  margin-right: 87px;
+  margin-left:10px
+}
+
+.small-text{
+  padding-right: 8px;
+  font-size:0.1%;
+  text-align: center;
+
+}

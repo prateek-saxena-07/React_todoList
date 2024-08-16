@@ -1,4 +1,7 @@
 import { useState } from "react";
+import reactLogo from '../assets/react.svg'
+import no from '../assets/no.png'
+
 function Header({ todo, setTodo }) {
     const [input, setInput] = useState('')
     const [error, setError] = useState('');
@@ -16,12 +19,13 @@ function Header({ todo, setTodo }) {
             return;
             }
     }
+    
     return (<>
-        <h3> Hey I am TodoList 👋 </h3>
+        <h3> 👋 I am <img src={reactLogo} alt="" height="15px" width="20px"/> TodoList  </h3>
          <div className="header-container">
             <input type="text"  className="input-field" placeholder="Add a new Task ( ^_^ )" value={input} onChange={(e)=>setInput(e.target.value)} onFocus={()=>setError('')}/>
             <button onClick={addTodo} className="add-button">Add</button>
-            {error && <p style={{ color: 'red' }} >{error}</p>}
+            {error && <p style={{ color: 'red'}} >Noooooooo<img src={no} alt="" height="30px" width="35px" style={{padding:'0px' ,margin:'0px'}}/></p>}
         </div>
     </>)
 }

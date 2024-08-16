@@ -25,21 +25,21 @@ function ToDoItem({ toDo, todo, setTodo })
         }
         else
         {
-            // alert("cannot be empty")
-            setError('Unable to add an empty task');
+            setError('Unable to save an empty Edited task');
             return;
             }
     }
-    
+   
 
     return (<>{isEditing ? (<div>
         <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} placeholder="Enter Some Text  (=ʘᆽʘ=)∫" onFocus={()=>setError('')}/>
         <button onClick={saveEdit} className="save-button">Save</button>
+        {}
         {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>)
         :
-        (<div className="todo-item"><div className="todo-text"> {toDo.text} 
-            {/* <span>{toDo.id}</span>  */}</div>
+        (<div className="todo-item"><div className="todo-text"> 
+            <span className="small-text">{toDo.id}</span><span>{toDo.text} </span> </div>
             <div className="button-wrapper"> <button onClick={()=>setIsEditing(true)} className="edit-button">Edit</button>
             <button onClick={deleteTodo} className="delete-button">Delete</button>
                 <button onClick={(event) => { handleCheck(event) }} className="check-button">check</button>
