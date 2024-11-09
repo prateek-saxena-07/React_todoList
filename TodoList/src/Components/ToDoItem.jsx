@@ -51,7 +51,7 @@ function ToDoItem({ toDo, todo, setTodo })
     </div>)
         :
         (<div className="todo-item"><div className="todo-text"> 
-            <span className="small-text">{toDo.id}</span><span>{toDo.text} </span> </div>
+            <span>{toDo.text} </span> </div>
             <div className="button-wrapper">
                 <button onClick={() => setIsEditing(true)} className="edit-button">Edit</button>
             <button onClick={deleteTodo} className="delete-button">Delete</button>
